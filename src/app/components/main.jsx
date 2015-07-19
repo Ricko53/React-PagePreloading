@@ -2,14 +2,22 @@ let React = require('react');
 
 var Main = React.createClass({
 
+	getInitialState() {
+		return{
+			demo : " ",
+			container : "ip-container loading"
+		};
+	},
+
 	componentDidMount() {
 		this._startLoading();
+		console.log(this);
 	},
  	
  	render() {
-
  		return (
- 			<div id="ip-container" className="ip-container loading">
+ 			<div className={this.state.demo}>
+ 			<div id="ip-container" className={this.state.container}>
  				<header className="ip-header">
 					<h1 className="ip-logo">
 						<svg className="ip-inner" width="100%" height="100%" viewBox="0 0 300 160" preserveAspectRatio="xMidYMin meet" aria-labelledby="logo_title">
@@ -24,6 +32,28 @@ var Main = React.createClass({
 						</svg>
 					</div>
 				</header>
+				<div className="ip-main">
+					<nav className="codrops-demos">
+						<a className="current-demo" href="index.html">Demo 1</a>
+						<a href="index2.html">Demo 2</a>
+					</nav>
+					<h2>Make yourself at home.</h2>
+					<div className="browser clearfix">
+						<div className="box">
+							<span className="icon-bell"></span>
+							<p>Do Re Mi What Fa Si Ti Doi Nemo Do Re Mi What Fa Si Ti Doi Nemo</p>
+						</div>
+						<div className="box">
+							<span className="icon-heart"></span>
+							<p>E La Yo Na Ti Do Pa Pa Noah Do Re Mi What Fa Si Ti Doi Nemo</p>
+						</div>
+						<div className="box">
+							<span className="icon-cog"></span>
+							<p>No way! Hey Hey, me ok! Do Re Mi What Fa Si Ti Doi Nemo</p>
+						</div>
+					</div>
+				</div>
+			</div>
 			</div>
  		);
  	},
@@ -31,16 +61,27 @@ var Main = React.createClass({
  	_startLoading() {
  		var circle = React.findDOMNode(this.refs.ipLoaderCircle);
  		var progress = 0;
+ 		let self = this;
  		circle.style.strokeDasharray = circle.style.strokeDashoffset = circle.getTotalLength();
  		var interval = setInterval(function(){
 			 				progress = Math.min( progress + Math.random() * 0.1, 1 );
 			 				circle.style.strokeDashoffset = circle.getTotalLength() * ( 1 - progress );
+			 				console.log(progress);
 			 				if ( progress === 1 ) {
 								clearInterval( interval );
-								console.log("ok");
+								console.log(self);
+								self._changClass();
 							};
 			 		}, 80);
  	},
+
+ 	_changClass() {
+ 		this.setState({
+ 			demo : "layout-switch",
+			container : "ip-container loaded"
+ 		});
+ 		console.log("ok");
+ 	}
 
 });
 
