@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
 	font-weight: normal;
 	font-style: normal;
 	font-family: 'Blokk';
@@ -17,7 +17,7 @@
 		url('../fonts/feather/feather.woff?-9jv4cc') format('woff'),
 		url('../fonts/feather/feather.ttf?-9jv4cc') format('truetype'),
 		url('../fonts/feather/feather.svg?-9jv4cc#feather') format('svg');
-}
+}*/
 
 .ip-header {
 	position: fixed;
@@ -106,7 +106,7 @@
 .browser {
 	margin: 0 auto;
 	min-height: 400px;
-	max-width: 1000px;
+	max-width: 1200px;
 	width: 100%;
 	border-radius: 8px;
 	background-size: 100%;

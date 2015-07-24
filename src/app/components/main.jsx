@@ -1,12 +1,12 @@
 let React = require('react');
+let MorphBox = require('./morphBox.jsx');
 
 var Main = React.createClass({
 
 	getInitialState() {
 		return{
 			demo : " ",
-			container : "ip-container loading",
-			image : "landscape.jpg"
+			container : "ip-container loading"
 		};
 	},
 
@@ -34,41 +34,14 @@ var Main = React.createClass({
 				</header>
 				<div className="ip-main">
 					<nav className="codrops-demos">
-						<a className="current-demo" href="index.html">Demo 1</a>
-						<a href="index2.html">Demo 2</a>
+						<a className="current-demo" href="#">Demo 1</a>
+						<a href="#">Demo 2</a>
 					</nav>
 					<h2>Make yourself at home.</h2>
 					<div className="browser clearfix">
-						<div className="box">
-							<div className="box-main">
-								<div className="box-img">
-									<img alt="alt text" src={"img/" + this.state.image} />
-								</div>
-								<div className="box-inner">
-									<p>Lorem ipsum dolor sit amet.<br/>Consectetur adipiscing elit.</p>
-								</div>
-							</div>
-						</div>
-						<div className="box">
-							<div className="box-main">
-								<div className="box-img">
-									<img alt="alt text" src={"img/" + this.state.image} />
-								</div>
-								<div className="box-inner">
-									<p>Lorem ipsum dolor sit amet.<br/>Consectetur adipiscing elit.</p>
-								</div>
-							</div>
-						</div>
-						<div className="box">
-							<div className="box-main">
-								<div className="box-img">
-									<img alt="alt text" src={"img/" + this.state.image} />
-								</div>
-								<div className="box-inner">
-									<p>Lorem ipsum dolor sit amet.<br/>Consectetur adipiscing elit.</p>
-								</div>
-							</div>
-						</div>
+						<MorphBox />
+						<MorphBox />
+						<MorphBox />
 					</div>
 				</div>
 			</div>
