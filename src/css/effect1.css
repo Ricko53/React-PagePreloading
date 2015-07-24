@@ -1,4 +1,4 @@
-@font-face {
+/*@font-face {
 	font-weight: normal;
 	font-style: normal;
 	font-family: 'Blokk';
@@ -17,7 +17,7 @@
 		url('../fonts/feather/feather.woff?-9jv4cc') format('woff'),
 		url('../fonts/feather/feather.ttf?-9jv4cc') format('truetype'),
 		url('../fonts/feather/feather.svg?-9jv4cc#feather') format('svg');
-}
+}*/
 
 .ip-header {
 	position: fixed;
@@ -105,59 +105,48 @@
 
 .browser {
 	margin: 0 auto;
-	padding-top: 8%;
 	min-height: 400px;
-	max-width: 1000px;
+	max-width: 1200px;
 	width: 100%;
 	border-radius: 8px;
-	background: #fff url(../img/browser.png) no-repeat 50% 0;
 	background-size: 100%;
 	color: #d3d3d3;
 }
 
 .box {
 	float: left;
-	padding: 3.5em;
+	padding: 2em;
 	width: 33.3%;
 	font-size: 0.7em;
 	line-height: 1.5;
+	position: relative;
+}
+
+.box-main {
+	background-color: #fff;
+  	box-shadow: 0 1px 6px rgba(0,0,0,.3);
+}
+
+.box-img {
+	position: relative;
+	overflow: hidden;
+}
+
+.box-img img {
+	display: block;
+	height: auto;
+	/*width: 100%;*/
+}
+
+.box-inner {
+	position: relative;
+	padding: 10px 16px;
 }
 
 .box p {
-	font-family: 'Blokk', Arial, sans-serif;
-}
-
-[class^="icon-"]::before, 
-[class*=" icon-"]::before {
-	display: block;
-	margin-bottom: 0.5em;
-	padding: 0.5em;
-	border-radius: 5px;
-	background: #dfdfdf;
-	color: #fff;
-	text-align: center;
-	text-transform: none;
-	font-weight: normal;
-	font-style: normal;
-	font-variant: normal;
-	font-size: 5em;
-	font-family: 'feather';
-	line-height: 1;
-	speak: none;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-.icon-bell:before {
-	content: "\e006";
-}
-
-.icon-cog:before {
-	content: "\e023";
-}
-
-.icon-heart:before {
-	content: "\e024";
+	margin: 24px 0;
+	font-size: 12px;
+  	color: #212121;
 }
 
 /* Animations */

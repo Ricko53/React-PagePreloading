@@ -5,13 +5,13 @@ var Main = React.createClass({
 	getInitialState() {
 		return{
 			demo : " ",
-			container : "ip-container loading"
+			container : "ip-container loading",
+			image : "landscape.jpg"
 		};
 	},
 
 	componentDidMount() {
 		this._startLoading();
-		console.log(this);
 	},
  	
  	render() {
@@ -40,16 +40,34 @@ var Main = React.createClass({
 					<h2>Make yourself at home.</h2>
 					<div className="browser clearfix">
 						<div className="box">
-							<span className="icon-bell"></span>
-							<p>Do Re Mi What Fa Si Ti Doi Nemo Do Re Mi What Fa Si Ti Doi Nemo</p>
+							<div className="box-main">
+								<div className="box-img">
+									<img alt="alt text" src={"img/" + this.state.image} />
+								</div>
+								<div className="box-inner">
+									<p>Lorem ipsum dolor sit amet.<br/>Consectetur adipiscing elit.</p>
+								</div>
+							</div>
 						</div>
 						<div className="box">
-							<span className="icon-heart"></span>
-							<p>E La Yo Na Ti Do Pa Pa Noah Do Re Mi What Fa Si Ti Doi Nemo</p>
+							<div className="box-main">
+								<div className="box-img">
+									<img alt="alt text" src={"img/" + this.state.image} />
+								</div>
+								<div className="box-inner">
+									<p>Lorem ipsum dolor sit amet.<br/>Consectetur adipiscing elit.</p>
+								</div>
+							</div>
 						</div>
 						<div className="box">
-							<span className="icon-cog"></span>
-							<p>No way! Hey Hey, me ok! Do Re Mi What Fa Si Ti Doi Nemo</p>
+							<div className="box-main">
+								<div className="box-img">
+									<img alt="alt text" src={"img/" + this.state.image} />
+								</div>
+								<div className="box-inner">
+									<p>Lorem ipsum dolor sit amet.<br/>Consectetur adipiscing elit.</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -66,10 +84,8 @@ var Main = React.createClass({
  		var interval = setInterval(function(){
 			 				progress = Math.min( progress + Math.random() * 0.1, 1 );
 			 				circle.style.strokeDashoffset = circle.getTotalLength() * ( 1 - progress );
-			 				console.log(progress);
 			 				if ( progress === 1 ) {
 								clearInterval( interval );
-								console.log(self);
 								self._changClass();
 							};
 			 		}, 80);
