@@ -40,8 +40,6 @@ var Main = React.createClass({
 					<h2>Make yourself at home.</h2>
 					<div className="browser clearfix">
 						<MorphBox />
-						<MorphBox />
-						<MorphBox />
 					</div>
 				</div>
 			</div>
@@ -69,7 +67,6 @@ var Main = React.createClass({
  			demo : "layout-switch",
 			container : "ip-container loaded"
  		});
- 		console.log("ok");
  	}
 
 });

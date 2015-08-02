@@ -6,7 +6,6 @@ var MorphBox = React.createClass({
 		return {
 			left : 0,
 			top : 0,
-			width : 0,
 			image : "img/landscape.jpg",
 			boxClass : "box"
 		};
@@ -14,7 +13,7 @@ var MorphBox = React.createClass({
 
 	changeOpen() {
 		this.setState({
-			boxClass : "box action open"
+			boxClass : "box active open"
 		});
 	},
 
@@ -22,6 +21,16 @@ var MorphBox = React.createClass({
 		this.setState({
 			boxClass : "box"
 		});
+	},
+
+	handleScroll() {
+		let button = this.refs.imgPosition.getDOMNode();
+	    let buttonPos = button.getBoundingClientRect();
+	    console.log(buttonPos);
+	    this.setState({
+	      left : buttonPos.left,
+	      top : buttonPos.top
+	    });
 	},
 
 	componentDidMount() {
@@ -35,16 +44,15 @@ var MorphBox = React.createClass({
 	    window.addEventListener('scroll', this.handleScroll);
 	  },
 
-	  componentWillUnmount() {
+	componentWillUnmount() {
 	    window.removeEventListener('scroll', this.handleScroll);
-	  },
+	},
 
 	render() {
 
 		var styles = {
 	      left: this.state.left,
-	      top: this.state.top,
-	      backgroundImage: 'url(img/landscape.jpg)'
+	      top: this.state.top
 	    };
 
 		return (
@@ -58,13 +66,8 @@ var MorphBox = React.createClass({
 					</div>
 				</div>
 				<div style={styles} className="box-content">
-					<div>
-						<div className="content-style-overlay">
-							<span onClick={this.changeClose} className="icon-close">close</span>
-							<h2>About Parsley</h2>
-                			<p>Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot courgette tatsoi pea sprouts fava bean collard greens dandelion okra wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.</p>
-                		</div>
-					</div>
+					<img src={'img/landscape.jpg'} alt="Background Image"/>
+					<span onClick={this.changeClose} className="icon-close">close</span>
 				</div>
 			</div>
 		);
