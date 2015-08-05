@@ -115,7 +115,7 @@
 
 .box {
 	float: left;
-	padding: 1em;
+	padding: 2em;
 	width: 33.3%;
 	font-size: 0.7em;
 	line-height: 1.5;
@@ -123,6 +123,7 @@
 }
 
 .box .box-main {
+	position: relative;
 	background-color: #fff;
   	box-shadow: 0 1px 6px rgba(0,0,0,.3);
   	z-index: 10;
@@ -172,7 +173,7 @@
 	z-index: 5;
 	opacity: 0;
 	overflow: hidden;
-	width: 342px;
+	width: 327px;
 	height: 214px;
 	background-color: #FFF;
 	-webkit-transition: opacity 0.3s 0.5s, width 0.4s 0.1s, height 0.4s 0.1s, top 0.4s 0.1s, left 0.4s 0.1s;
@@ -198,7 +199,26 @@
     min-height: 100%;
 }
 
-.box .box-content > div {
+.box .box-content .box-card {
+	position: relative;
+    width: 90%;
+    max-width: 800px;
+    height: 300px;
+    margin: 450px auto 60px;
+    padding: 30px 40px 22px;
+    background: #fff;
+    transition-property: transform;
+    transition-duration: 0.5s;
+    transition-delay: 0.5s;
+    -webkit-transform: translate3d(0,300px,0);
+    transform: translate3d(0,300px,0);
+}
+
+.box.open .box-content .box-card {
+	-webkit-transform: translate3d(0,50,0);
+    transform: translate3d(0,50,0);
+}
+/*.box .box-content > div {
 	visibility: hidden;
 	height: 0;
 	opacity: 0;
@@ -212,6 +232,22 @@
 	opacity: 1;
 	-webkit-transition: opacity 0.3s 0.5s;
 	transition: opacity 0.3s 0.5s;
+}*/
+
+.box-content .icon-close {
+	position: absolute;
+    top: 20px;
+    right: 20px;
+	border: 2px solid #f9e1c9;
+	border-radius: 50%;
+	line-height: 2.8;
+	z-index: 100;
+	display: block;
+	overflow: hidden;
+	width: 3em;
+	height: 3em;
+	text-align: center;
+	cursor: pointer;
 }
 
 /* Animations */

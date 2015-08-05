@@ -6,7 +6,7 @@ var MorphBox = React.createClass({
 		return {
 			left : 0,
 			top : 0,
-			image : "img/landscape.jpg",
+			image : "img/5.jpg",
 			boxClass : "box"
 		};
 	},
@@ -23,10 +23,15 @@ var MorphBox = React.createClass({
 		});
 	},
 
+	changeBackground() {
+		this.setState({
+			boxClass : "box active open detail"
+		});
+	},
+
 	handleScroll() {
 		let button = this.refs.imgPosition.getDOMNode();
 	    let buttonPos = button.getBoundingClientRect();
-	    console.log(buttonPos);
 	    this.setState({
 	      left : buttonPos.left,
 	      top : buttonPos.top
@@ -36,7 +41,6 @@ var MorphBox = React.createClass({
 	componentDidMount() {
 	    let button = this.refs.imgPosition.getDOMNode();
 	    let buttonPos = button.getBoundingClientRect();
-	    console.log(buttonPos);
 	    this.setState({
 	      left : buttonPos.left,
 	      top : buttonPos.top
@@ -66,8 +70,10 @@ var MorphBox = React.createClass({
 					</div>
 				</div>
 				<div style={styles} className="box-content">
-					<img src={'img/landscape.jpg'} alt="Background Image"/>
+					<img onClick={this.changeOpen} src={this.state.image} alt="Background Image"/>
 					<span onClick={this.changeClose} className="icon-close">close</span>
+					<div onClick={this.changeBackground} className="box-card">
+					</div>
 				</div>
 			</div>
 		);
