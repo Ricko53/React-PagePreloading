@@ -33,10 +33,6 @@ var Main = React.createClass({
 					</div>
 				</header>
 				<div className="ip-main">
-					<nav className="codrops-demos">
-						<a className="current-demo" href="#">Demo 1</a>
-						<a href="#">Demo 2</a>
-					</nav>
 					<h2>Make yourself at home.</h2>
 					<div className="browser clearfix">
 						<MorphBox />
